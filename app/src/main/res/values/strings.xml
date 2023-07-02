@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">AppTest</string>
+    <string name="welcome_to_bitcoin_miner">Welcome to Bitcoin Miner</string>
+    <string name="nothing">null</string>
+    <string name="begin">НАЧАТЬ</string>
+    <string name="balance">Balance:&#160;</string>
+    <string name="your_balance">Your Balance</string>
+    <string name="satoshi">Satoshi</string>
+    <string name="btc">Btc</string>
+    <string name="use_boost">Используйте ускорение</string>
+    <string name="percent">%</string>
+    <string name="boost">Boost</string>
+    <string name="activate_server">Активируйте мощный сервер</string>
+    <string name="ping">Ping</string>
+    <string name="six">6</string>
+    <string name="ms">ms</string>
+    <string name="twelve">12</string>
+    <string name="twenty_five">25</string>
+    <string name="three">3</string>
+    <string name="income_increase">Увеличение дохода</string>
+    <string name="getBTC">Получить ВТС</string>
+    <string name="fifty_percent">50%</string>
+    <string name="options">Options</string>
+    <string name="person">Person</string>
+    <string name="wallet">Wallet</string>
+</resources>

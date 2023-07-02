@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".views.MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/top_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/welcome_to_bitcoin_miner"
+            android:textColor="#2BA628"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/balance_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/nothing"
+            android:src="@drawable/balance_background"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_title" />
+
+        <ImageButton
+            android:id="@+id/balance_button"
+            android:layout_width="75dp"
+            android:layout_height="76dp"
+            android:background="@drawable/balance_button_states"
+            android:contentDescription="@string/nothing"
+            app:layout_constraintBottom_toBottomOf="@id/balance_background"
+            app:layout_constraintEnd_toEndOf="@id/balance_background"
+            app:layout_constraintTop_toTopOf="@+id/balance_background"
+            app:layout_constraintVertical_bias="0.488" />
+
+        <TextView
+            android:id="@+id/begin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/begin"
+            android:textColor="#171224"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/balance_button"
+            app:layout_constraintEnd_toEndOf="@id/balance_button"
+            app:layout_constraintStart_toStartOf="@id/balance_button"
+            app:layout_constraintTop_toTopOf="@id/balance_button" />
+
+        <TextView
+            android:id="@+id/your_balance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/your_balance"
+            android:textColor="#171224"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@id/balance_value_satoshi"
+            app:layout_constraintEnd_toEndOf="@id/balance_value_satoshi"
+            app:layout_constraintStart_toStartOf="@id/balance_value_satoshi" />
+
+        <TextView
+            android:id="@+id/balance_value_satoshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/jejugothic"
+            android:text="@string/satoshi"
+            android:textColor="#171224"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toBottomOf="@id/balance_background"
+            app:layout_constraintStart_toStartOf="@id/balance_background"
+            app:layout_constraintTop_toTopOf="@+id/balance_background" />
+
+        <TextView
+            android:id="@+id/balance_value_btc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/btc"
+            android:textColor="#171224"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/balance_value_satoshi"
+            app:layout_constraintStart_toStartOf="@id/balance_value_satoshi"
+            app:layout_constraintTop_toBottomOf="@id/balance_value_satoshi" />
+
+        <ImageView
+            android:id="@+id/progress_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:contentDescription="@string/nothing"
+            android:src="@drawable/progress_back"
+            app:layout_constraintStart_toEndOf="@id/balance_button"
+            app:layout_constraintTop_toTopOf="@id/balance_background" />
+
+        <TextView
+            android:id="@+id/use_speedup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/jejugothic"
+            android:text="@string/use_boost"
+            android:textColor="#171224"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/balance_background"
+            app:layout_constraintTop_toBottomOf="@id/balance_background" />
+
+        <ImageView
+            android:id="@+id/progress_front"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/nothing"
+            app:layout_constraintBottom_toBottomOf="@id/progress_back"
+            app:layout_constraintEnd_toEndOf="@id/progress_back"
+            app:layout_constraintStart_toStartOf="@id/progress_back" />
+
+        <TextView
+            android:id="@+id/progress_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@string/percent"
+            android:textColor="#171224"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@id/progress_back"
+            app:layout_constraintStart_toStartOf="@id/progress_back"
+            app:layout_constraintTop_toTopOf="@id/progress_front" />
+
+        <ImageButton
+            android:id="@+id/boost_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boost_button_states"
+            android:contentDescription="@string/nothing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/use_speedup" />
+
+        <ImageView
+            android:id="@+id/rocket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:contentDescription="@string/nothing"
+            android:src="@drawable/rocket"
+            app:layout_constraintBottom_toBottomOf="@id/boost_button"
+            app:layout_constraintStart_toStartOf="@id/boost_button"
+            app:layout_constraintTop_toTopOf="@id/boost_button" />
+
+        <TextView
+            android:id="@+id/boost_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/boost"
+            android:textColor="#85DA43"
+            app:layout_constraintBottom_toBottomOf="@id/rocket"
+            app:layout_constraintStart_toEndOf="@id/rocket"
+            app:layout_constraintTop_toTopOf="@id/rocket" />
+
+        <TextView
+            android:id="@+id/boost_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:text="@string/fifty_percent"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/boost_button"
+            app:layout_constraintEnd_toEndOf="@id/boost_button"
+            app:layout_constraintTop_toTopOf="@id/boost_button" />
+
+        <TextView
+            android:id="@+id/activate_server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/jejugothic"
+            android:text="@string/activate_server"
+            android:textColor="#171224"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/boost_button"
+            app:layout_constraintTop_toBottomOf="@id/boost_button" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/servers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activate_server">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/first_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/first_space"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/first_server_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/first_server_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/first_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/first_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/first_server_back" />
+
+                <ImageView
+                    android:id="@+id/first_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/first_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/first_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/first_server_back" />
+
+                <TextView
+                    android:id="@+id/first_ping_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ping"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/first_server_back"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/first_ping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/six"
+                    android:textColor="@color/color_selector"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/first_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/first_server_back" />
+
+                <TextView
+                    android:id="@+id/first_ping_ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ms"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/first_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/first_server_back"
+                    tools:ignore="SmallSp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:id="@+id/first_space"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/first_server"
+                app:layout_constraintEnd_toStartOf="@id/second_server"
+                app:layout_constraintStart_toEndOf="@id/first_server"
+                app:layout_constraintTop_toTopOf="@id/first_server"></Space>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/second_server"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@id/second_space"
+                app:layout_constraintStart_toEndOf="@+id/first_space"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/second_server_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/second_server_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/second_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/second_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/second_server_back" />
+
+                <ImageView
+                    android:id="@+id/second_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/second_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/second_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/second_server_back" />
+
+                <TextView
+                    android:id="@+id/second_ping_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ping"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/second_server_back"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/second_ping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/twelve"
+                    android:textColor="@color/color_selector"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/second_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/second_server_back" />
+
+                <TextView
+                    android:id="@+id/second_ping_ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ms"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/second_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/second_server_back"
+                    tools:ignore="SmallSp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:id="@+id/second_space"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/first_server"
+                app:layout_constraintEnd_toStartOf="@id/third_server"
+                app:layout_constraintStart_toEndOf="@id/second_server"
+                app:layout_constraintTop_toTopOf="@id/first_server"></Space>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/third_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/third_space"
+                app:layout_constraintStart_toEndOf="@+id/second_space"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/third_server_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/third_server_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer"
+                    app:layout_constraintBottom_toBottomOf="@+id/third_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/third_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/third_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/third_server_back" />
+
+                <ImageView
+                    android:id="@+id/third_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/third_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/third_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/third_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/third_server_back" />
+
+                <TextView
+                    android:id="@+id/third_ping_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ping"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/third_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/third_server_back"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/third_ping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/twenty_five"
+                    android:textColor="@color/color_selector"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/third_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/third_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/third_server_back" />
+
+                <TextView
+                    android:id="@+id/third_ping_ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ms"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/third_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/third_server_back"
+                    tools:ignore="SmallSp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Space
+                android:id="@+id/third_space"
+                android:layout_width="15dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/first_server"
+                app:layout_constraintEnd_toStartOf="@id/forth_server"
+                app:layout_constraintStart_toEndOf="@id/third_server"
+                app:layout_constraintTop_toTopOf="@id/first_server"></Space>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/forth_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/third_space"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/forth_server_back"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer_back"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/forth_server_indicator"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/speedometer"
+                    app:layout_constraintBottom_toBottomOf="@+id/forth_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/forth_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/forth_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/forth_server_back" />
+
+                <ImageView
+                    android:id="@+id/forth_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/nothing"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintBottom_toBottomOf="@+id/forth_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/forth_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/forth_server_back"
+                    app:layout_constraintTop_toTopOf="@+id/forth_server_back" />
+
+                <TextView
+                    android:id="@+id/forth_ping_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ping"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/forth_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/forth_server_back"
+                    tools:ignore="SmallSp" />
+
+                <TextView
+                    android:id="@+id/forth_ping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/three"
+                    android:textColor="@color/color_selector"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/forth_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/forth_server_back"
+                    app:layout_constraintStart_toStartOf="@+id/forth_server_back" />
+
+                <TextView
+                    android:id="@+id/forth_ping_ms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:text="@string/ms"
+                    android:textColor="@color/color_selector"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/forth_server_back"
+                    app:layout_constraintEnd_toEndOf="@+id/forth_server_back"
+                    tools:ignore="SmallSp" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/income_increase"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/jejugothic"
+            android:text="@string/income_increase"
+            android:textColor="#171224"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/servers" />
+
+        <ImageButton
+            android:id="@+id/get_btc_button"
+            android:layout_width="328dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/boost_button_states"
+            android:contentDescription="@string/nothing"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/income_increase" />
+
+        <TextView
+            android:id="@+id/get_btc_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/getBTC"
+            android:textColor="#85DA43"
+            app:layout_constraintBottom_toBottomOf="@id/get_btc_button"
+            app:layout_constraintEnd_toEndOf="@id/get_btc_button"
+            app:layout_constraintStart_toStartOf="@id/get_btc_button"
+            app:layout_constraintTop_toTopOf="@id/get_btc_button" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
